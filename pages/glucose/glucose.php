@@ -12,11 +12,10 @@ $Nama = $_SESSION['Nama'];
 $bagian = $_SESSION['bagian'];
 $mesin = $_SESSION['mesin'];
 
-if ($mesin !== 'boiler' && $bagian !== 'Master') {
-    header('Location: ../page/dashboard.php?token=' . urlencode($_SESSION['token']) . '&error=not_allowed');
+if ($mesin !== 'glucose' && $bagian !== 'Master' && $bagian !== 'Produksi') {
+    header('Location: ../dashboard.php?token=' . urlencode($_SESSION['token']) . '&error=not_allowed');
     exit;
 }
-
 ?>
 
 <!DOCTYPE html>
@@ -25,20 +24,29 @@ if ($mesin !== 'boiler' && $bagian !== 'Master') {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Boiler</title>
-    <link rel="stylesheet" href="../../src/css/boiler/data-trend.css">
+    <title>Glucose</title>
+    <!-- <link rel="stylesheet" href="../../src/css/homepage.css"> -->
+    <link rel="stylesheet" href="../../src/css/glucose/style.css">
     <link rel="shortcut icon" href="../../src/img/wings.png" type="image/x-icon">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
         integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://kit.fontawesome.com/b99e6756e.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="../../src/js/glucose/date.js"></script>
+    <script src="../../src/js/glucose/GST1.js"></script>
+    <script src="../../src/js/glucose/GST2.js"></script>
+    <script src="../../src/js/glucose/GST3.js"></script>
+    <script src="../../src/js/glucose/GST4.js"></script>
+    <script src="../../src/js/glucose/GST5.js"></script>
 </head>
 
 <style>
     @media (max-width: 750px) {
         .slide img {
-            margin-left: 8px;
+            width: 80%;
+            margin-left: 5px;
+            border-radius: 100%;
         }
 
         ul li {
@@ -107,9 +115,8 @@ if ($mesin !== 'boiler' && $bagian !== 'Master') {
             <img src="../../src/img/kecap.png" alt="logo">
             <p>PT Bumi Alam Segar</p>
             <ul>
-                <li><a href="./boiler.php?token=<?php echo htmlspecialchars($_SESSION['token']); ?>"><i class="fas fa-tv"></i>Dashboard</a></li>
+                <li><a href="../dashboard.php?token=<?php echo htmlspecialchars($_SESSION['token']); ?>"><i class="fas fa-tv"></i>Dashboard</a></li>
                 <li><a href="./data-trend.php?token=<?php echo htmlspecialchars($_SESSION['token']); ?>"><i class="fa-solid fa-chart-line"></i>Data Trend</a></li>
-                <li><a href="./operasional_boiler.php?token=<?php echo htmlspecialchars($_SESSION['token']); ?>"><i class="fas fa-file"></i>Form PDF</a></li>
                 <li><a href="../../function/logout.php"><i class="fa-solid fa-right-from-bracket"></i>Logout</a></li>
             </ul>
             <h6>By <span id="date"></span></h6>
@@ -117,7 +124,7 @@ if ($mesin !== 'boiler' && $bagian !== 'Master') {
     </label>
     <div class="container">
         <div class="header">
-            <h2>Data Trend</h2>
+            <h2>Glucose</h2>
             <div class="user">
                 <div class="akun">
                     <p><?php echo htmlspecialchars($Nama); ?></p>
@@ -126,36 +133,27 @@ if ($mesin !== 'boiler' && $bagian !== 'Master') {
                 <img src="../../src/img/user.png" alt="user-logo">
             </div>
         </div>
-        <div class="info">
-            <div class="dropdown">
-                <button class="dropbtn">Select an Option</button>
-                <div class="dropdown-content">
-                    <a href="../../chart/boiler/level-feed-water.php?token=<?php echo htmlspecialchars($_SESSION['token']); ?>">Level Feed Water</a>
-                    <a href="../../chart/boiler/pv-steam.php?token=<?php echo htmlspecialchars($_SESSION['token']); ?>">PV Steam</a>
-                    <a href="../../chart/boiler/feed-pressure.php?token=<?php echo htmlspecialchars($_SESSION['token']); ?>">Feed Pressure</a>
-                    <a href="../../chart/boiler/lhguil.php?token=<?php echo htmlspecialchars($_SESSION['token']); ?>">LH Guiloutine</a>
-                    <a href="../../chart/boiler/rhguil.php?token=<?php echo htmlspecialchars($_SESSION['token']); ?>">RH Guiloutine</a>
-                    <a href="../../chart/boiler/lh-temp.php?token=<?php echo htmlspecialchars($_SESSION['token']); ?>">LH TEMP</a>
-                    <a href="../../chart/boiler/rh-temp.php?token=<?php echo htmlspecialchars($_SESSION['token']); ?>">RH TEMP</a>
-                    <a href="../../chart/boiler/idfan.php?token=<?php echo htmlspecialchars($_SESSION['token']); ?>">IDFan</a>
-                    <a href="../../chart/boiler/lhfd.php?token=<?php echo htmlspecialchars($_SESSION['token']); ?>">LHFDFan</a>
-                    <a href="../../chart/boiler/rhfd.php?token=<?php echo htmlspecialchars($_SESSION['token']); ?>">RHFDFan</a>
-                    <a href="../../chart/boiler/lhs.php?token=<?php echo htmlspecialchars($_SESSION['token']); ?>">LH Stoker</a>
-                    <a href="../../chart/boiler/rhs.php?token=<?php echo htmlspecialchars($_SESSION['token']); ?>">RH Stoker</a>
-                    <a href="../../chart/boiler/waterpump1.php?token=<?php echo htmlspecialchars($_SESSION['token']); ?>">Water Pump 1</a>
-                    <a href="../../chart/boiler/waterpump2.php?token=<?php echo htmlspecialchars($_SESSION['token']); ?>">Water Pump 2</a>
-                    <a href="../../chart/boiler/inletwater.php?token=<?php echo htmlspecialchars($_SESSION['token']); ?>">Inlet Water Flow</a>
-                    <a href="../../chart/boiler/outletsteam.php?token=<?php echo htmlspecialchars($_SESSION['token']); ?>">Outlet Steam Flow</a>
-                    <a href="../../chart/boiler/suhufeed.php?token=<?php echo htmlspecialchars($_SESSION['token']); ?>">Suhu Feed Tank</a>
+        <div class="data">
+            <div class="data">
+                <div class="info">
+                    <img src="../../src/img/glucose/tampilan.png" alt="">
                 </div>
+                <div class="date">
+                    <span id="day"></span> <span id="month"></span> <span id="year"></span> |
+                    <span id="hour"></span>:<span id="minute"></span>:<span id="second"></span>
+                </div>
+                <p id="gst1" class="gst1"></p>
+                <p id="gst2" class="gst2"></p>
+                <p id="gst3" class="gst3"></p>
+                <p id="gst4" class="gst4"></p>
+                <p id="gst5" class="gst5"></p>
             </div>
         </div>
-    </div>
 
-    <script>
-        // Ambil tahun saat ini
-        document.getElementById("date").textContent = new Date().getFullYear();
-    </script>
+        <script>
+            // Ambil tahun saat ini
+            document.getElementById("date").textContent = new Date().getFullYear();
+        </script>
 </body>
 
 </html>

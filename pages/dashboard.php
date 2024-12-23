@@ -21,7 +21,7 @@ $bagian = $_SESSION['bagian'];
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PT BAS</title>
     <link rel="stylesheet" href="../src/css/boiler/homepage.css">
-    <link rel="shortcut icon" href="../src/img/wings1.png" type="image/x-icon">
+    <link rel="shortcut icon" href="../src/img/wings.png" type="image/x-icon">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
         integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -94,17 +94,21 @@ $bagian = $_SESSION['bagian'];
             <img src="../src/img/dissolver.jpg" alt="Card 3">
             <p>Dissolver</p>
         </a>
-        <a href="../../olahsari/page/olahsari.php?token=<?php echo htmlspecialchars($_SESSION['token']); ?>" class="card">
-            <img src="../src/img/olahsari.png" alt="Card 4">
+        <a href="./olahsari/olahsari.php?token=<?php echo htmlspecialchars($_SESSION['token']); ?>" class="card">
+            <img src="../src/img/olahsari/olahsari.png" alt="Card 4">
             <p>Olahsari</p>
         </a>
-        <a href="../../glucose/page/glucose.php?token=<?php echo htmlspecialchars($_SESSION['token']); ?>" class="card">
-            <img src="../src/img/glucose.png" alt="Card 5">
+        <a href="./glucose/glucose.php?token=<?php echo htmlspecialchars($_SESSION['token']); ?>" class="card">
+            <img src="../src/img/glucose/glucose.png" alt="Card 5">
             <p>Glucose</p>
         </a>
-        <a href="../../daily_tank/page/daily_tank.php?token=<?php echo htmlspecialchars($_SESSION['token']); ?>" class="card">
-            <img src="../src/img/daily-tank.jpg" alt="Card 6">
+        <a href="./daily_tank/daily_tank.php?token=<?php echo htmlspecialchars($_SESSION['token']); ?>" class="card">
+            <img src="../src/img/daily-tank/daily-tank.jpg" alt="Card 6">
             <p>Daily Tank</p>
+        </a>
+        <a href="../pages/pasteurisasi_line_2/pasteurisasi_line_2.php?token=<?php echo htmlspecialchars($_SESSION['token']); ?>" class="card">
+            <img src="../src/img/glucose/line2.png" alt="Card 7">
+            <p>Pasteurisasi Line 2</p>
         </a>
     </div>
     </div>
