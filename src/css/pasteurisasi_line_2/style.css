@@ -130,16 +130,20 @@ p.nama {
     margin-left: 8%;
 }
 
-.data p.temp1 {
-    margin-top: 20.2%;
-    margin-left: 27%;
-    font-size: 35px;
+.data p.heating {
+    margin-top: 24.3%;
+    margin-left: 22%;
+    font-size: 18px;
+    color: yellow;
+    text-shadow: 0 0 12px #e6e4db;
 }
 
-.data p.lc1 {
-    margin-top: 3%;
-    margin-left: 27%;
-    font-size: 35px;
+.data p.BT1 {
+    margin-top: 24.3%;
+    margin-left: 26%;
+    font-size: 18px;
+    color: yellow;
+    text-shadow: 0 0 12px #e6e4db;
 }
 
 .data p.temp2 {

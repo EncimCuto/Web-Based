@@ -103,6 +103,7 @@ try {
     $tanggal_awal_formatted = DateTime::createFromFormat('Y-m-d', $tanggal_awal)->format('d-m-Y');
     $tanggal_akhir_formatted = DateTime::createFromFormat('Y-m-d', $tanggal_akhir)->format('d-m-Y');
     $fileName = 'Data Olahsari ' . $tanggal_awal_formatted . ' hingga ' . $tanggal_akhir_formatted . '.xlsx';
+
     // Mengunduh file
     header('Content-Type: application/vnd.openxmlformats-officedocument.spreadsheetml.sheet');
     header('Content-Disposition: attachment;filename="' . $fileName . '"');

@@ -1,8 +1,8 @@
 <?php
 session_start();
 set_time_limit(300);
-require_once '../function/koneksi.php';
-require_once __DIR__ . '/../vendor/autoload.php';
+require_once './koneksi.php';
+require_once __DIR__ . '../../../vendor/autoload.php';
 
 use PhpOffice\PhpSpreadsheet\Spreadsheet;
 use PhpOffice\PhpSpreadsheet\Writer\Xlsx;
@@ -18,6 +18,17 @@ $tanggal_awal = $_GET['tanggal-awal'] ?? '';
 $tanggal_akhir = $_GET['tanggal-akhir'] ?? $tanggal_awal;
 $data_types = isset($_GET['data']) ? explode(',', $_GET['data']) : [];
 $interval = $_GET['interval'] ?? ''; // Menangani parameter interval
+
+// Validasi input tanggal
+function validateDate($date, $format = 'Y-m-d')
+{
+    $d = DateTime::createFromFormat($format, $date);
+    return $d && $d->format($format) === $date;
+}
+
+if (!validateDate($tanggal_awal) || (!empty($tanggal_akhir) && !validateDate($tanggal_akhir))) {
+    die("Format tanggal tidak valid.");
+}
 
 if (empty($tanggal_awal) || empty($data_types)) {
     die("Parameter tanggal-awal atau data tidak ada.");
@@ -89,7 +100,9 @@ try {
 
     // Menyimpan file Excel
     $writer = new Xlsx($spreadsheet);
-    $fileName = 'data_glucose ' . $tanggal_awal . ' hingga ' . $tanggal_akhir . '.xlsx';
+    $tanggal_awal_formatted = DateTime::createFromFormat('Y-m-d', $tanggal_awal)->format('d-m-Y');
+    $tanggal_akhir_formatted = DateTime::createFromFormat('Y-m-d', $tanggal_akhir)->format('d-m-Y');
+    $fileName = 'Data Glucose ' . $tanggal_awal_formatted . ' hingga ' . $tanggal_akhir_formatted . '.xlsx';
 
     // Mengunduh file
     header('Content-Type: application/vnd.openxmlformats-officedocument.spreadsheetml.sheet');

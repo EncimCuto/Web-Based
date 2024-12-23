@@ -4,7 +4,7 @@ session_start();
 require_once '../../function/koneksi_login.php';
 
 if (!isset($_SESSION['token']) || $_SESSION['token'] !== $_GET['token']) {
-    header('Location: ../../../index.php');
+    header('Location: ../../index.php');
     exit;
 }
 
@@ -21,7 +21,7 @@ if ($mesin !== 'boiler' && $bagian !== 'Master') {
 
 <title>PT BAS</title>
 <script src="https://kit.fontawesome.com/b99e6756e.js"></script>
-<link rel="shortcut icon" href="../src/img/wings1.png" type="image/x-icon">
+<link rel="shortcut icon" href="../../src/img/wings.png" type="image/x-icon">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
     integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
     crossorigin="anonymous" referrerpolicy="no-referrer" />

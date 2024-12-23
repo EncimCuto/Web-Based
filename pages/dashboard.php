@@ -82,15 +82,15 @@ $bagian = $_SESSION['bagian'];
     </div>
 
     <div class="card-container">
-        <a href="../pages/boiler/boiler.php?token=<?php echo htmlspecialchars($_SESSION['token']); ?>" class="card">
+        <a href="./boiler/boiler.php?token=<?php echo htmlspecialchars($_SESSION['token']); ?>" class="card">
             <img src="../src/img/boiler/background.png" alt="Card 1">
             <p>Boiler</p>
         </a>
-        <a href="../pages/pasteurisasi/pasteurisasi.php?token=<?php echo htmlspecialchars($_SESSION['token']); ?>" class="card">
+        <a href="./pasteurisasi/pasteurisasi.php?token=<?php echo htmlspecialchars($_SESSION['token']); ?>" class="card">
             <img src="../src/img/pasteurisasi/pasteur.png" alt="Card 2">
             <p>Pasteurisasi</p>
         </a>
-        <a href="../../dissolver/page/dissolver.php?token=<?php echo htmlspecialchars($_SESSION['token']); ?>" class="card">
+        <a href="./dissolver/dissolver.php?token=<?php echo htmlspecialchars($_SESSION['token']); ?>" class="card">
             <img src="../src/img/dissolver.jpg" alt="Card 3">
             <p>Dissolver</p>
         </a>
@@ -103,10 +103,10 @@ $bagian = $_SESSION['bagian'];
             <p>Glucose</p>
         </a>
         <a href="./daily_tank/daily_tank.php?token=<?php echo htmlspecialchars($_SESSION['token']); ?>" class="card">
-            <img src="../src/img/daily-tank/daily-tank.jpg" alt="Card 6">
+            <img src="../src/img/daily_tank/daily_tank.jpg" alt="Card 6">
             <p>Daily Tank</p>
         </a>
-        <a href="../pages/pasteurisasi_line_2/pasteurisasi_line_2.php?token=<?php echo htmlspecialchars($_SESSION['token']); ?>" class="card">
+        <a href="./pasteurisasi_line_2/pasteurisasi_line_2.php?token=<?php echo htmlspecialchars($_SESSION['token']); ?>" class="card">
             <img src="../src/img/glucose/line2.png" alt="Card 7">
             <p>Pasteurisasi Line 2</p>
         </a>

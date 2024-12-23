@@ -4,7 +4,7 @@ session_start();
 require_once '../../function/koneksi_login.php';
 
 if (!isset($_SESSION['token']) || $_SESSION['token'] !== $_GET['token']) {
-    header('Location: ../../../index.php');
+    header('Location: ../../index.php');
     exit;
 }
 
@@ -25,8 +25,8 @@ if ($mesin !== 'glucose' && $bagian !== 'Master' && $bagian !== 'Produksi') {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Glucose</title>
-    <link rel="stylesheet" href="../assets/css/data-trend.css">
-    <link rel="shortcut icon" href="../assets/img/wings1.png" type="image/x-icon">
+    <link rel="stylesheet" href="../../src/css/glucose/data-trend.css">
+    <link rel="shortcut icon" href="../../src/img/wings.png" type="image/x-icon">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
         integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -100,12 +100,12 @@ if ($mesin !== 'glucose' && $bagian !== 'Master' && $bagian !== 'Produksi') {
 <body>
     <label>
         <div class="slide">
-            <img src="../assets/img/kecap.png" alt="logo">
+            <img src="../../src/img/kecap.png" alt="logo">
             <p>PT Bumi Alam Segar</p>
             <ul>
                 <li><a href="./glucose.php?token=<?php echo htmlspecialchars($_SESSION['token']); ?>"><i class="fas fa-tv"></i>Dashboard</a></li>
                 <li><a href="./data-trend.php?token=<?php echo htmlspecialchars($_SESSION['token']); ?>"><i class="fa-solid fa-chart-line"></i>Data Trend</a></li>
-                <li><a href="../proses/logout.php"><i class="fa-solid fa-right-from-bracket"></i>Logout</a></li>
+                <li><a href="../../function/logout.php"><i class="fa-solid fa-right-from-bracket"></i>Logout</a></li>
             </ul>
             <h6>By <span id="date"></span></h6>
         </div>
@@ -118,18 +118,18 @@ if ($mesin !== 'glucose' && $bagian !== 'Master' && $bagian !== 'Produksi') {
                     <p><?php echo htmlspecialchars($Nama); ?></p>
                     <p><?php echo htmlspecialchars($bagian); ?></p>
                 </div>
-                <img src="../assets/img/user.png" alt="user-logo">
+                <img src="../../src/img/user.png" alt="user-logo">
             </div>
         </div>
         <div class="info">
             <div class="dropdown">
                 <button class="dropbtn">Select an Option</button>
                 <div class="dropdown-content">
-                    <a href="../chart/GST1.php?token=<?php echo htmlspecialchars($_SESSION['token']); ?>">GST 1</a>
-                    <a href="../chart/GST2.php?token=<?php echo htmlspecialchars($_SESSION['token']); ?>">GST 2</a>
-                    <a href="../chart/GST3.php?token=<?php echo htmlspecialchars($_SESSION['token']); ?>">GST 3</a>
-                    <a href="../chart/GST4.php?token=<?php echo htmlspecialchars($_SESSION['token']); ?>">GST 4</a>
-                    <a href="../chart/GST5.php?token=<?php echo htmlspecialchars($_SESSION['token']); ?>">GST 5</a>
+                    <a href="../../chart/glucose/GST1.php?token=<?php echo htmlspecialchars($_SESSION['token']); ?>">GST 1</a>
+                    <a href="../../chart/glucose/GST2.php?token=<?php echo htmlspecialchars($_SESSION['token']); ?>">GST 2</a>
+                    <a href="../../chart/glucose/GST3.php?token=<?php echo htmlspecialchars($_SESSION['token']); ?>">GST 3</a>
+                    <a href="../../chart/glucose/GST4.php?token=<?php echo htmlspecialchars($_SESSION['token']); ?>">GST 4</a>
+                    <a href="../../chart/glucose/GST5.php?token=<?php echo htmlspecialchars($_SESSION['token']); ?>">GST 5</a>
                 </div>
             </div>
         </div>

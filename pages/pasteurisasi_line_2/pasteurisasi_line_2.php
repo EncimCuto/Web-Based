@@ -26,15 +26,17 @@ if ($mesin !== 'olahsari' && $bagian !== 'Master' && $bagian !== 'Produksi') {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pasteurisasi Line 2</title>
     <!-- <link rel="stylesheet" href="../../src/css/homepage.css"> -->
-    <link rel="stylesheet" href="../../src/css/olahsari/style.css">
+    <link rel="stylesheet" href="../../src/css/pasteurisasi_line_2/style.css">
+
     <link rel="shortcut icon" href="../../src/img/wings.png" type="image/x-icon">
+    
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
         integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
     <script src="https://kit.fontawesome.com/b99e6756e.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <script src="../../src/js/olahsari/date.js"></script>
-    <script src="../../src/js/olahsari/temp1.js"></script>
+    <script src="../../src/js/pasteurisasi_line_2/heating.js"></script>
+    <script src="../../src/js/pasteurisasi_line_2/BT1.js"></script>
     <script src="../../src/js/olahsari/lc1.js"></script>
     <script src="../../src/js/olahsari/temp2.js"></script>
     <script src="../../src/js/olahsari/lc2.js"></script>
@@ -143,10 +145,9 @@ if ($mesin !== 'olahsari' && $bagian !== 'Master' && $bagian !== 'Produksi') {
                     <span id="hour"></span>:<span id="minute"></span>:<span id="second"></span>
                 </div>
                 <p class="nama"><?php echo htmlspecialchars($Nama); ?></p>
-                <p id="temp1" class="temp1"></p>
-                <p id="lc1" class="lc1"></p>
-                <p id="temp2" class="temp2"></p>
-                <p id="lc2" class="lc2"></p>
+                <p id="heating" class="heating"></p>
+                <p id="BT1" class="BT1"></p>
+
             </div>
         </div>
 

@@ -12,7 +12,7 @@ $bagian = $_SESSION['bagian'];
 $mesin = $_SESSION['mesin'];
 
 if ($mesin !== 'olahsari' && $bagian !== 'Master' && $bagian !== 'Produksi') {
-    header('Location: ../dashboard.php?token=' . urlencode($_SESSION['token']) . '&error=not_allowed');
+    header('Location: ../../pages/dashboard.php?token=' . urlencode($_SESSION['token']) . '&error=not_allowed');
     exit;
 }
 ?>

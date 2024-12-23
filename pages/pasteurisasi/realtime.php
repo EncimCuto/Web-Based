@@ -4,7 +4,7 @@ session_start();
 require_once '../../function/koneksi_login.php';
 
 if (!isset($_SESSION['token']) || $_SESSION['token'] !== $_GET['token']) {
-    header('Location: ../../../index.php');
+    header('Location: ../../index.php');
     exit;
 }
 
