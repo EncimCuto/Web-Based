@@ -26,7 +26,7 @@ if ($mesin !== 'glucose' && $bagian !== 'Master' && $bagian !== 'Produksi') {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>STK400</title>
     <!-- <link rel="stylesheet" href="../../src/css/homepage.css"> -->
-    <link rel="stylesheet" href="../../src/css/glucose/style.css">
+    <link rel="stylesheet" href="../../src/css/stk400/style.css">
     <link rel="shortcut icon" href="../../src/img/wings.png" type="image/x-icon">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
         integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
@@ -34,11 +34,11 @@ if ($mesin !== 'glucose' && $bagian !== 'Master' && $bagian !== 'Produksi') {
     <script src="https://kit.fontawesome.com/b99e6756e.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="../../src/js/glucose/date.js"></script>
-    <script src="../../src/js/glucose/GST1.js"></script>
-    <script src="../../src/js/glucose/GST2.js"></script>
-    <script src="../../src/js/glucose/GST3.js"></script>
+    <script src="../../src/js/stk400/tank_glucose.js"></script>
+    <script src="../../src/js/stk400/flowrate.js"></script>
+    <!-- <script src="../../src/js/glucose/GST3.js"></script>
     <script src="../../src/js/glucose/GST4.js"></script>
-    <script src="../../src/js/glucose/GST5.js"></script>
+    <script src="../../src/js/glucose/GST5.js"></script> -->
 </head>
 
 <style>
@@ -142,11 +142,11 @@ if ($mesin !== 'glucose' && $bagian !== 'Master' && $bagian !== 'Produksi') {
                     <span id="day"></span> <span id="month"></span> <span id="year"></span> |
                     <span id="hour"></span>:<span id="minute"></span>:<span id="second"></span>
                 </div>
-                <p id="gst1" class="gst1"></p>
-                <p id="gst2" class="gst2"></p>
-                <p id="gst3" class="gst3"></p>
+                <p id="flowrate" class="gst1"></p>
+                <p id="tank_glucose" class="gst2"></p>
+                <!-- <p id="gst3" class="gst3"></p>
                 <p id="gst4" class="gst4"></p>
-                <p id="gst5" class="gst5"></p>
+                <p id="gst5" class="gst5"></p> -->
             </div>
         </div>
 

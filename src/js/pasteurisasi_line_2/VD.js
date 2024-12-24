@@ -2,10 +2,10 @@ $(document).ready(function() {
     // Fungsi untuk memuat dan memperbarui nilai feed water secara berkala
     function updateRHTEMPValue() {
         $.ajax({
-            url: '../../data/olahsari/temp2.php', // File PHP untuk mengambil data terbaru dari MySQL
+            url: '../../data/pasteurisasi_line_2/VD.php', // File PHP untuk mengambil data terbaru dari MySQL
             dataType: 'json',
             success: function(response) {
-                $('#temp2').text(response.temp2); // Update nilai feed water
+                $('#VD').text(response.VD); // Update nilai feed water
             },
             error: function(_xhr, status, error) {
                 console.error('AJAX Error: ' + status + error);

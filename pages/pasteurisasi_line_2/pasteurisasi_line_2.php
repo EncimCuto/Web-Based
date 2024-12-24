@@ -37,10 +37,14 @@ if ($mesin !== 'olahsari' && $bagian !== 'Master' && $bagian !== 'Produksi') {
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="../../src/js/pasteurisasi_line_2/date.js"></script>
     <script src="../../src/js/pasteurisasi_line_2/heating.js"></script>
+    <script src="../../src/js/pasteurisasi_line_2/preheating.js"></script>
+    <script src="../../src/js/pasteurisasi_line_2/holding.js"></script>
+    <script src="../../src/js/pasteurisasi_line_2/precooling.js"></script>
+    <script src="../../src/js/pasteurisasi_line_2/cooling.js"></script>
+    <script src="../../src/js/pasteurisasi_line_2/flowrate.js"></script>
     <script src="../../src/js/pasteurisasi_line_2/BT1.js"></script>
-    <script src="../../src/js/olahsari/lc1.js"></script>
-    <script src="../../src/js/olahsari/temp2.js"></script>
-    <script src="../../src/js/olahsari/lc2.js"></script>
+    <script src="../../src/js/pasteurisasi_line_2/VD.js"></script>
+    <script src="../../src/js/pasteurisasi_line_2/BT2.js"></script>
 
 </head>
 
@@ -144,8 +148,15 @@ if ($mesin !== 'olahsari' && $bagian !== 'Master' && $bagian !== 'Produksi') {
                 <span id="day"></span> <span id="month"></span> <span id="year"></span> |
                 <span id="hour"></span>:<span id="minute"></span>:<span id="second"></span>
             </div>
+            <p id="preheating" class="preheating"></p>
             <p id="heating" class="heating"></p>
+            <p id="holding" class="holding"></p>
+            <p id="precooling" class="precooling"></p>
+            <p id="cooling" class="cooling"></p>
+            <p id="flowrate" class="flowrate"></p>
             <p id="BT1" class="BT1"></p>
+            <p id="VD" class="VD"></p>
+            <p id="BT2" class="BT2"></p>
 
         </div>
 

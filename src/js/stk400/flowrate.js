@@ -2,10 +2,10 @@ $(document).ready(function() {
     // Fungsi untuk memuat dan memperbarui nilai feed water secara berkala
     function updateRHTEMPValue() {
         $.ajax({
-            url: '../../data/o/temp1.php', // File PHP untuk mengambil data terbaru dari MySQL
+            url: '../../data/stk400/flowrate.php', // File PHP untuk mengambil data terbaru dari MySQL
             dataType: 'json',
             success: function(response) {
-                $('#temp1').text(response.temp1); // Update nilai feed water
+                $('#flowrate').text(response.flowrate); // Update nilai feed water
             },
             error: function(_xhr, status, error) {
                 console.error('AJAX Error: ' + status + error);
