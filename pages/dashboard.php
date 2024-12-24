@@ -91,7 +91,7 @@ $bagian = $_SESSION['bagian'];
             <p>Pasteurisasi</p>
         </a>
         <a href="./dissolver/dissolver.php?token=<?php echo htmlspecialchars($_SESSION['token']); ?>" class="card">
-            <img src="../src/img/dissolver.jpg" alt="Card 3">
+            <img src="../src/img/dissolver/dissolver.jpg" alt="Card 3">
             <p>Dissolver</p>
         </a>
         <a href="./olahsari/olahsari.php?token=<?php echo htmlspecialchars($_SESSION['token']); ?>" class="card">
@@ -109,6 +109,10 @@ $bagian = $_SESSION['bagian'];
         <a href="./pasteurisasi_line_2/pasteurisasi_line_2.php?token=<?php echo htmlspecialchars($_SESSION['token']); ?>" class="card">
             <img src="../src/img/glucose/line2.png" alt="Card 7">
             <p>Pasteurisasi Line 2</p>
+        </a>
+        <a href="./stk400/stk400.php?token=<?php echo htmlspecialchars($_SESSION['token']); ?>" class="card">
+            <img src="../src/img/glucose/line2.png" alt="Card 7">
+            <p>STK400</p>
         </a>
     </div>
     </div>

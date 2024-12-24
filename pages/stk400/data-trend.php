@@ -37,12 +37,6 @@ if ($mesin !== 'glucose' && $bagian !== 'Master' && $bagian !== 'Produksi') {
 
 <style>
     @media (max-width: 750px) {
-        .slide img {
-            width: 80%;
-            margin-left: 5px;
-            border-radius: 100%;
-        }
-
         ul li {
             list-style: none;
             border-radius: 100px;

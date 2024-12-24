@@ -29,12 +29,13 @@ if ($mesin !== 'olahsari' && $bagian !== 'Master' && $bagian !== 'Produksi') {
     <link rel="stylesheet" href="../../src/css/pasteurisasi_line_2/style.css">
 
     <link rel="shortcut icon" href="../../src/img/wings.png" type="image/x-icon">
-    
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
         integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
     <script src="https://kit.fontawesome.com/b99e6756e.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="../../src/js/pasteurisasi_line_2/date.js"></script>
     <script src="../../src/js/pasteurisasi_line_2/heating.js"></script>
     <script src="../../src/js/pasteurisasi_line_2/BT1.js"></script>
     <script src="../../src/js/olahsari/lc1.js"></script>
@@ -136,19 +137,16 @@ if ($mesin !== 'olahsari' && $bagian !== 'Master' && $bagian !== 'Produksi') {
             </div>
         </div>
         <div class="data">
-            <div class="data">
-                <div class="info">
-                    <img src="../../src/img/pasteurisasi_line_2/tampilan.png" alt="">
-                </div>
-                <div class="date">
-                    <span id="day"></span> <span id="month"></span> <span id="year"></span> |
-                    <span id="hour"></span>:<span id="minute"></span>:<span id="second"></span>
-                </div>
-                <p class="nama"><?php echo htmlspecialchars($Nama); ?></p>
-                <p id="heating" class="heating"></p>
-                <p id="BT1" class="BT1"></p>
-
+            <div class="info">
+                <img src="../../src/img/pasteurisasi_line_2/tampilan.png" alt="">
             </div>
+            <div class="date">
+                <span id="day"></span> <span id="month"></span> <span id="year"></span> |
+                <span id="hour"></span>:<span id="minute"></span>:<span id="second"></span>
+            </div>
+            <p id="heating" class="heating"></p>
+            <p id="BT1" class="BT1"></p>
+
         </div>
 
         <script>

@@ -7,6 +7,7 @@ include "function/koneksi_login.php";
 
 <head>
     <title>Login</title>
+
     <style>
         body,
         html {
@@ -74,7 +75,36 @@ include "function/koneksi_login.php";
             transform: translateY(-50%);
             cursor: pointer;
         }
+
+        @media (max-width: 600px) {
+            .login-container {
+                height: 400px;
+                width: 600px;
+            }
+
+            .login-container img {
+                width: 250px;
+                height: 100px;
+            }
+
+            .login-container h2 {
+                font-size: 35px;
+            }
+
+            .login-container input[type="text"],
+            .login-container input[type="password"] {
+                padding: 20px;
+            }
+
+            .login-container button {
+                padding: 15px;
+            }
+            .input-container i {
+                right: 20px;
+            }
+        }
     </style>
+
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet" />
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
     <link rel="shortcut icon" href="./src/img/wings.png" type="image/x-icon">

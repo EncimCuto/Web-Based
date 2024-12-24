@@ -117,17 +117,12 @@ ul li a i {
 .data {
     z-index: 1;
     font-weight: bold;
-    font-size: 28px;
 }
 
 .data .date {
-    margin-top: -46.8%;
-    margin-left: 70.6%;
-}
-
-p.nama {
-    margin-top: -2.3%;
-    margin-left: 8%;
+    margin-top: -44.1%;
+    margin-left: 71.5%;
+    font-size: 20px;
 }
 
 .data p.heating {
